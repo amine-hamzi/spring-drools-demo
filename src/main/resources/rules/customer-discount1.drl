@@ -1,0 +1,21 @@
+import org.example.springdroolsdemo.OrderRequest;
+import org.example.springdroolsdemo.CustomerType;
+global org.example.springdroolsdemo.OrderDiscount orderDiscount;
+
+dialect "mvel"
+
+rule "Customer type based discount - others"
+    when
+        OrderRequest(customerType.getValue != "LOYAL")
+    then
+        System.out.println("==========Adding 3% discount for NEW or DISSATISFIED customer=============");
+        orderDiscount.setDiscount(orderDiscount.getDiscount() + 3);
+end
+
+rule "Amount based discount"
+    when
+        OrderRequest(amount > 1000)
+    then
+        System.out.println("==========Adding 5% discount for amount more than 1000$=============");
+        orderDiscount.setDiscount(orderDiscount.getDiscount() + 5);
+end
