@@ -85,8 +85,5 @@ spring-drools-demo/
 ## 🤝 Contributing
 Contributions are welcome! If you find bugs or want to suggest improvements, feel free to open an issue or submit a pull request.
 
-## 📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ## 📬 Contact
 aminehamzi85@gmail.com
